@@ -2,16 +2,11 @@ pipeline {
   agent any
   stages {
     stage('build') {
-      agent {
-        dockerfile {
-          filename 'Dockerfile'
-        }
-
-      }
       steps {
+        echo 'building...'
+        sh 'make build'
         cleanWs()
       }
     }
-
   }
 }
