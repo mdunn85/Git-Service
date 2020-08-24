@@ -30,11 +30,18 @@ export class RepositoriesController {
         // Remove repositories that are forks
         const reposWithoutForks: RepositoryDto[] = repos.filter(repo => !repo.fork)
 
-        // Transform repositories into repositoryWithBranches objects
-        return await Promise.all(reposWithoutForks.map(async (repo) => {
+        return await this.getRepositoryBranches(reposWithoutForks)
+    }
+
+    /**
+     * Transform repositories into repositoryWithBranches objects
+     * @param repositories
+     */
+    async getRepositoryBranches(repositories: RepositoryDto[]): Promise<RepositoryWithBranchesDto[]> {
+        return await Promise.all(repositories.map(async (repo) => {
             const repositoryWithBranches: RepositoryWithBranchesDto = new RepositoryWithBranchesDto(repo)
             // Get the repository branches for Github
-            const branches: BranchDto[] = await this.gitService.getRepositoryBranches(username, repo.name)
+            const branches: BranchDto[] = await this.gitService.getRepositoryBranches(repo.owner.login, repo.name)
             // Add the branches to repositoryWithBranches object
             repositoryWithBranches.addBranches(branches)
             return repositoryWithBranches
