@@ -4,7 +4,7 @@ pipeline {
     stage('build') {
       steps {
         echo 'building...'
-        sh 'make build'
+        sh 'make setup'
         cleanWs()
       }
     }
