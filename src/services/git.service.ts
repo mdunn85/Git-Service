@@ -1,12 +1,11 @@
 import { RepositoryDto } from '@/services/dtos/repository.dto'
 import { HttpException, HttpService, HttpStatus, Injectable } from '@nestjs/common'
-import { AxiosRequestConfig } from 'Axios'
 import { BranchDto } from '@/services/dtos/branch.dto'
 
 @Injectable()
 export class GitService {
 
-    serviceHttpConfig: AxiosRequestConfig
+    serviceHttpConfig
 
     constructor(private readonly httpService: HttpService) {
         this.serviceHttpConfig = {
