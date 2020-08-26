@@ -5,6 +5,7 @@ WORKDIR /assests
 COPY package.json /assets
 COPY package-lock.json /assets
 RUN npm install
+COPY node_modules /assets
 
 FROM node:12.18.3-alpine
 
