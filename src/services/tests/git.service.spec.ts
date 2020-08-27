@@ -2,7 +2,6 @@ import { mockRepos } from '@/services/tests/fixtures/repo.data'
 import { Test } from '@nestjs/testing'
 import { HttpService } from '@nestjs/common'
 import { GitService } from '@/services/git.service'
-import { AxiosResponse } from 'Axios'
 import { of } from 'rxjs'
 import { RepositoryDto } from '@/services/dtos/repository.dto'
 import { mockBranchData } from '@/services/tests/fixtures/branch.data'
@@ -30,7 +29,7 @@ describe('Git service', () => {
     })
 
     it('should return a users repositories', async () => {
-        const mockHttpResponse: AxiosResponse = {
+        const mockHttpResponse = {
             config: undefined,
             data: mockRepos,
             headers: undefined,
@@ -47,7 +46,7 @@ describe('Git service', () => {
     })
 
     it('should return a 404 if user repository not found', async () => {
-        const mockHttpResponse: AxiosResponse = {
+        const mockHttpResponse = {
             config: undefined,
             data: undefined,
             headers: undefined,
@@ -68,7 +67,7 @@ describe('Git service', () => {
     })
 
     it('should return a list of branches for a repository', async () => {
-        const mockHttpResponse: AxiosResponse = {
+        const mockHttpResponse = {
             config: undefined,
             data: mockBranchData,
             headers: undefined,
@@ -84,7 +83,7 @@ describe('Git service', () => {
     })
 
     it('should return no branches if HTTP response is 404', async () => {
-        const mockHttpResponse: AxiosResponse = {
+        const mockHttpResponse = {
             config: undefined,
             data: undefined,
             headers: undefined,
