@@ -26,7 +26,7 @@ pipeline {
       }
       steps {
         echo 'deploying to AWS...'
-        sh 'make deploy'
+        sh 'npm run deploy'
       }
     }
     stage('Cleanup') {

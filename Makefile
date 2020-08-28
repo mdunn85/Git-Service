@@ -12,7 +12,4 @@ test:
 	docker run -t ${IMAGE_NAME}:${IMAGE_TAG} npm run test
 
 deploy:
-	docker run -t ${IMAGE_NAME}:${IMAGE_TAG} npm run deploy:install
-	docker run -t ${IMAGE_NAME}:${IMAGE_TAG} npm run deploy:build
-	docker run -t ${IMAGE_NAME}:${IMAGE_TAG} npm run deploy:synth
-	docker run -t ${IMAGE_NAME}:${IMAGE_TAG} npm run deploy:prod
+	docker run -t ${IMAGE_NAME}:${IMAGE_TAG} npm run deploy
