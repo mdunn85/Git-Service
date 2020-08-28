@@ -20,11 +20,6 @@ pipeline {
 //       }
 //     }
     stage('Deploying') {
-        agent {
-            docker {
-                image 'node:12.18.3-alpine'
-            }
-        }
       environment {
         AWS_ACCESS_KEY_ID = credentials('jenkins-aws-secret-key-id')
         AWS_SECRET_ACCESS_KEY = credentials('jenkins-aws-secret-access-key')
