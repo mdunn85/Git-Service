@@ -19,7 +19,7 @@
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
     "test:e2e": "jest --config ./test/jest-e2e.json",
-    "deploy": "cd ./aws-deploy && npm install && npm run build && npx cdk bootstrap && npx cdk synth && npx cdk deploy --require-approval never"
+    "deploy": "cd ./aws-deploy && ls && npm install && npx cdk bootstrap && npx cdk synth && npx cdk deploy --require-approval never"
   },
   "dependencies": {
     "@nestjs/common": "^7.0.0",
