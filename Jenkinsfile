@@ -1,24 +1,24 @@
 pipeline {
   agent any
   stages {
-//     stage('Build') {
-//       steps {
-//         echo 'building...'
-//         sh 'make setup'
-//       }
-//     }
-//     stage('Test') {
-//       steps {
-//         echo 'testing...'
-//         sh 'make test'
-//       }
-//     }
-//     stage('Lint') {
-//       steps {
-//         echo 'linting...'
-//         sh 'make lint'
-//       }
-//     }
+    stage('Build') {
+      steps {
+        echo 'building...'
+        sh 'make setup'
+      }
+    }
+    stage('Test') {
+      steps {
+        echo 'testing...'
+        sh 'make test'
+      }
+    }
+    stage('Lint') {
+      steps {
+        echo 'linting...'
+        sh 'make lint'
+      }
+    }
     stage('Deploying') {
       environment {
         AWS_ACCESS_KEY_ID = credentials('jenkins-aws-secret-key-id')

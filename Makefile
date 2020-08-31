@@ -10,6 +10,3 @@ lint:
 
 test:
 	docker run -t ${IMAGE_NAME}:${IMAGE_TAG} npm run test
-
-deploy:
-	docker run -t ${IMAGE_NAME}:${IMAGE_TAG} npm run deploy
